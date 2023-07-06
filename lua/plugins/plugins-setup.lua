@@ -48,6 +48,8 @@ return require('packer').startup(function(use)
   use "rafamadriz/friendly-snippets"
   use "hrsh7th/cmp-path" -- 文件路径
 
+  use "lvimuser/lsp-inlayhints.nvim" -- for inlay hints
+
   use "akinsho/bufferline.nvim" -- buffer分割线
   use "lewis6991/gitsigns.nvim" -- 左则git提示
 

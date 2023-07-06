@@ -13,7 +13,8 @@ opt.autoindent = true
 opt.wrap = false
 
 opt.cursorline = true
-opt.mouse:append("a")
+-- opt.mouse:append("a")
+opt.mouse = ""
 
 -- pase
 

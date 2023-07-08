@@ -6,6 +6,7 @@ require("mason-lspconfig").setup({
     "jdtls",
     "clangd",
     "cmake",
+    "gopls",
   },
 })
 
@@ -29,4 +30,7 @@ require("lspconfig").clangd.setup {
   filetypes = { "c", "cc", "cpp", "objc", "objcpp", "cuda", "proto" }
 }
 
-require("lsp-inlayhints").setup()
+-- require("lsp-inlayhints").setup()
+
+require("lspconfig").gopls.setup {
+}

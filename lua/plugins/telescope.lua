@@ -25,3 +25,8 @@ vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fr', builtin.resume, {}) -- resume before search history
+
+vim.keymap.set('n', '<leader>fj', builtin.jumplist, {}) -- jumplist
+
+vim.keymap.set('n', '<leader>fre', builtin.lsp_references, {}) -- list reference
+

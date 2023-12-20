@@ -13,6 +13,7 @@ opt.autoindent = true
 opt.wrap = false
 
 opt.cursorline = true
+opt.colorcolumn = "85"
 -- opt.mouse:append("a")
 opt.mouse = ""
 

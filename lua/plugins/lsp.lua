@@ -32,7 +32,8 @@ require("lspconfig").clangd.setup {
     "--j=12",
     "--pch-storage=disk",
 	"--compile-commands-dir=build",
-	"--background-index"
+	"--background-index",
+    --"-Wno-unknown-warning-option"
   },
   filetypes = { "c", "cc", "cpp", "objc", "objcpp", "cuda", "proto" }
 }

@@ -55,10 +55,20 @@ return require('packer').startup(function(use)
 
   use "akinsho/toggleterm.nvim" -- terminal
 
+  use "FabijanZulj/blame.nvim" -- git blame
+
+  use "lukas-reineke/indent-blankline.nvim" -- indent
+
   -- file search
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',  -- 文件检索
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
+    },
+    config = function()
+      require("telescope").load_extension("live_grep_args")
+    end
   }
 
 

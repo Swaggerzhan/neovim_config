@@ -15,6 +15,11 @@ keymap.set("n", "<leader>o", ":NvimTreeToggle<CR>")
 keymap.set("n", "L", ":bnext<CR>")
 keymap.set("n", "H", ":bprevious<CR>")
 
+-- git blame
+keymap.set("n", "<leader>gg", ":EnableBlame<CR>")
+keymap.set("n", "<leader>ggc", ":DisableBlame<CR>")
+
+
 -- Mappings.
 -- See `:help vim.lsp.*` for documentation on any of the below functions
 local bufopts = { noremap=true, silent=true }
@@ -27,4 +32,8 @@ keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 -- ctrl + o for jump back
 -- ctrl + i for jump in
 
+
+-- for quick set pane
+keymap.set('n', '<space>ll', "<C-w>30>")
+keymap.set('n', '<space>hh', "<C-w>30<")
 

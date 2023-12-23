@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
   use "akinsho/toggleterm.nvim" -- terminal
 
   use "FabijanZulj/blame.nvim" -- git blame
+  use "sindrets/diffview.nvim"  -- git diff
 
   use "lukas-reineke/indent-blankline.nvim" -- indent
 

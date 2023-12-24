@@ -12,9 +12,9 @@ require("mason-lspconfig").setup({
 
 -- lsp client for cmp
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 -- remove some trash auto complete
 capabilities.textDocument.completion.completionItem.snippetSupport = false
+
 
 require("lspconfig").lua_ls.setup {
   capabilities = capabilities,
@@ -35,7 +35,7 @@ require("lspconfig").clangd.setup {
 	"--background-index",
     --"-Wno-unknown-warning-option"
   },
-  filetypes = { "c", "cc", "cpp", "objc", "objcpp", "cuda", "proto" }
+  filetypes = { "c", "cc", "cpp", "objc", "objcpp", "cuda" }
 }
 
 -- require("lsp-inlayhints").setup()

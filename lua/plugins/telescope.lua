@@ -36,6 +36,7 @@ vim.keymap.set('n', '<leader>fr', builtin.resume, {}) -- resume before search hi
 vim.keymap.set('n', '<leader>fj', builtin.jumplist, {}) -- jumplist
 
 vim.keymap.set('n', '<leader>fs', builtin.lsp_references, {}) -- list reference
+vim.keymap.set('n', '<leader>fd', builtin.lsp_document_symbols, {}) -- list symbol
 
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {}) -- list opened file
 vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, {}) -- find line in opened file

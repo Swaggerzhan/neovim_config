@@ -37,3 +37,9 @@ keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 keymap.set('n', '<space>ll', "<C-w>30>")
 keymap.set('n', '<space>hh', "<C-w>30<")
 
+local function cmd(command)
+   return table.concat({ '<Cmd>', command, '<CR>' })
+end
+
+vim.keymap.set('n', '<C-w>z', cmd 'WindowsMaximize')
+

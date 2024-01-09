@@ -1,7 +1,8 @@
 local telescope = require('telescope')
 local builtin = require('telescope.builtin')
 
-telescope.setup{
+--telescope.setup{
+require('telescope').setup(){
    defaults = {
 	 vimgrep_arguments = {
 	   'rg',

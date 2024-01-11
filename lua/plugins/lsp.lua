@@ -1,11 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
-    -- "sumneko_lua",
-    "lua_ls",
-    "jdtls",
     "clangd",
-    --"cmake",
     "gopls",
   },
 })
@@ -41,4 +37,6 @@ require("lspconfig").clangd.setup {
 -- require("lsp-inlayhints").setup()
 
 require("lspconfig").gopls.setup {
+  capabilities = capabilities,
+  filetypes = { "go" }
 }

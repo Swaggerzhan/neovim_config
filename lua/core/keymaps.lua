@@ -43,3 +43,7 @@ end
 
 vim.keymap.set('n', '<C-w>z', cmd 'WindowsMaximize')
 
+-- for register
+keymap.set('n', 'dd', '"_dd')
+keymap.set('n', 'ciw', '"_ciw')
+

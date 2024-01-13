@@ -18,6 +18,13 @@ end
 
 
 cmp.setup({
+  formatting = {
+    format = function(_, vim_item)
+      vim_item.menu = ""
+      vim_item.kind = ""
+      return vim_item
+    end
+  },
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
@@ -62,15 +69,25 @@ cmp.setup({
 
   --
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
+    {
+      name = 'nvim_lsp',
+      -- max show auto completion item count
+      max_item_count = 10,
+      -- The source-specific keyword length to trigger auto completion
+      keyword_length = 2,
+    },
     { 
       name = 'luasnip',
       entry_filter = function(entry)
         return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
       end
     },
-    { name = 'path' },
-  }, {
+    { 
+      name = 'path' 
+    },
+    --{ max_item_count = 7 },
+  }, 
+  {
     --{ name = 'buffer' },
   })
 })

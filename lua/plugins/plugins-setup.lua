@@ -88,6 +88,10 @@ return require('packer').startup(function(use)
     end
   }
 
+  use "okuuva/auto-save.nvim"
+
+  use "RRethy/vim-illuminate"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

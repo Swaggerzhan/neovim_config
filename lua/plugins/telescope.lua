@@ -30,14 +30,15 @@ vim.keymap.set('n', '<leader>fl', function()
   require('telescope').extensions.live_grep_args.live_grep_args()
 end, {})
 
-vim.keymap.set('n', '<leader>ffb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fo', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fr', builtin.resume, {}) -- resume before search history
 
 vim.keymap.set('n', '<leader>fj', builtin.jumplist, {}) -- jumplist
+vim.keymap.set('n', '<leader>fh', builtin.treesitter, {}) -- history
 
 vim.keymap.set('n', '<leader>fs', builtin.lsp_references, {}) -- list reference
 vim.keymap.set('n', '<leader>fd', builtin.lsp_document_symbols, {}) -- list symbol
 
-vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {}) -- list opened file
+--vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {}) -- list opened file
 vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, {}) -- find line in opened file

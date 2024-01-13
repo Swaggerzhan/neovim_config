@@ -22,8 +22,10 @@ require("plugins/blame")
 
 require("plugins/indent-blankline")
 require("plugins/windows")
+require("plugins/autosave")
+require("plugins/illuminate")
+
 
 --if vim.g.neovide then
 	vim.o.guifont = "Monaco:h13"
 --end
-

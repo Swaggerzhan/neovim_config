@@ -3,6 +3,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "clangd",
     "gopls",
+	"rust_analyzer",
   },
 })
 
@@ -39,4 +40,20 @@ require("lspconfig").clangd.setup {
 require("lspconfig").gopls.setup {
   capabilities = capabilities,
   filetypes = { "go" }
+}
+
+-- for rust
+require("lspconfig").rust_analyzer.setup {
+  capabilities = capabilities,
+  filetypes = { "rust" },
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
 }

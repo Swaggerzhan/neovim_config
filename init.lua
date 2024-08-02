@@ -24,6 +24,7 @@ require("plugins/indent-blankline")
 require("plugins/windows")
 require("plugins/autosave")
 require("plugins/illuminate")
+require("plugins/neoscroll")
 
 
 --if vim.g.neovide then

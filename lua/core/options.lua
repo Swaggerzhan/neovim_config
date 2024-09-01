@@ -9,6 +9,7 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
+opt.modeline = false
 
 opt.wrap = false
 
@@ -31,12 +32,22 @@ vim.cmd[[let g:WebDevIconsUnicodeDecorateFolderNodes = 1]]
 -- telescope preview show line number
 vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number"
 
+local autocmd = vim.api.nvim_create_autocmd
+
 -- clear jump list when create new nvim session
-vim.api.nvim_create_autocmd("VimEnter", {
+autocmd("VimEnter", {
     pattern = "*",
     callback = function()
         vim.cmd("clearjumps")
     end,
+})
+
+autocmd("BufEnter", {
+  callback = function()
+    vim.opt.formatoptions:remove { "c", "r", "o" }
+  end,
+  group = general,
+  desc = "Disable New Line Comment",
 })
 
 -- abort some trash diagnostics in lsp

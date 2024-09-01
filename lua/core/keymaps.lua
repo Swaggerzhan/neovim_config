@@ -42,6 +42,8 @@ local function cmd(command)
 end
 
 vim.keymap.set('n', '<C-w>z', cmd 'WindowsMaximize')
+vim.keymap.set('n', '<C-w>e', cmd 'WindowsEnableAutowidth')
+vim.keymap.set('n', '<C-w>d', cmd 'WindowsDisableAutowidth')
 
 -- for register
 keymap.set('n', 'dd', '"_dd')

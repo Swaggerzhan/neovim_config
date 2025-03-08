@@ -19,8 +19,6 @@ opt.scrolloff = 7
 --opt.mouse:append("a")
 opt.mouse = ""
 
--- pase
-
 -- theme
 vim.cmd[[colorscheme onedark]]
 vim.cmd[[let g:WebDevIconsNerdTreeAfterGlyphPadding = '  ']]
@@ -43,23 +41,31 @@ autocmd("VimEnter", {
 })
 
 autocmd("BufEnter", {
-  callback = function()
-    vim.opt.formatoptions:remove { "c", "r", "o" }
-  end,
-  group = general,
-  desc = "Disable New Line Comment",
+    callback = function()
+        vim.opt.formatoptions:remove { "c", "r", "o" }
+    end,
+    group = general,
+    desc = "Disable New Line Comment",
 })
+
+-- disable automatic comment continuation
+--vim.api.nvim_create_autocmd("FileType", {
+--    pattern = "*",
+--    callback = function()
+--        vim.opt.formatoptions:remove({ "r", "o" })
+--    end,
+--})
 
 -- abort some trash diagnostics in lsp
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    signs = {
-      severity_limit = "Hint",
-    },
-    virtual_text = {
-      severity_limit = "Warning",
-    },
-    update_in_insert = true,
-  }
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        signs = {
+            severity = { min = vim.diagnostic.severity.HINT },
+        },
+        virtual_text = {
+            severity = { min = vim.diagnostic.severity.WARN },
+        },
+        update_in_insert = true,
+    }
 )
 

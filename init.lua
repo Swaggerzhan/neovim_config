@@ -26,7 +26,4 @@ require("plugins/autosave")
 require("plugins/illuminate")
 require("plugins/neoscroll")
 
-
---if vim.g.neovide then
-	vim.o.guifont = "Monaco:h13"
---end
+vim.o.guifont = "Monaco:h13"
